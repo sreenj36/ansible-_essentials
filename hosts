@@ -1,0 +1,6 @@
+#[control]
+#127.0.0.1
+
+[gui]
+centos1 ansible_user=student
+centos2 ansible_user=student
