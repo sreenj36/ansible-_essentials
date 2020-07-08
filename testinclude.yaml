@@ -1,0 +1,6 @@
+---
+- include: /home/pho/Downloads/ansiblegit/update_systeminclude.yaml
+- hosts: gui
+  become: yes
+  tasks:
+    - include: /home/pho/Downloads/ansiblegit/nstall-apacheinclude.yaml 

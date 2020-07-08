@@ -1,0 +1,12 @@
+---
+- hosts: gui
+  become: yes
+  vars:
+    - file_ver: 1.0
+   
+   tasks:
+    - name:index file copying
+      template:
+         src: index.html.j2
+         dest: /var/www/html/index.html  
+  

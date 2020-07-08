@@ -1,16 +1,24 @@
                                Ansible-Ad-Hoc command
                            ..............................
+Ad-hoc commands in Ansible allow you to execute simple tasks at the command
+line against one or all of your hosts. An ad-hoc command consists of two 
+parameters, the host group that defines on what machines to run the task 
+against and the Ansible module to run.
+
 Ansible-Ad-Hoc command is a single liner executed using ansible on local/remote systems.
 Ansible needs ssh & python to work properly.
 we can use different modules with ansible
+
 -m is used for modules
 command,raw,shell,copy,yum,apt,service are different examples of modules
 -b uses to become root user
 -a to specify the action needed to execute
 default module on ansible is 'command'
 
+
 Examples of some ad-hoc commands
 .................................
+
 
 1. ansible  -m command -a whoami centos1 (instead of centos1 you can use the group that contains 
 remote systems or all option to include all the remote systems defined in the /etc/ansible/hosts)
@@ -25,7 +33,13 @@ remote systems or all option to include all the remote systems defined in the /e
 
 6. ansible -b -m command 'shutdown -r' centos1
 
-7. ansible -b -m yum -a 'name=httpd state=latest' centos1
+7. ansible -b -m yum -a 'name=httpd state=latest' centos1 ("installing packages on redhat based 
+systems with 'yum' module )
+
+8. ansible -b -m apt 'name=apache2 state=latest' ubuntu1 (installing packages on Debian based 
+systems with 'apt' module)
+
+9. ansible -b -m service -a 'name=apache2 enabled=true' ubuntu1 (service module to e)
 
 
 modules help can be listed using

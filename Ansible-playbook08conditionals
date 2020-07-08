@@ -1,0 +1,33 @@
+                 The When Statement
+              ----------------------- 
+Sometimes you will want to skip a particular step on a 
+particular host. This could be something as simple as 
+not installing a certain package if the operating 
+system is a particular version, or it could be 
+something like performing some cleanup steps if a 
+filesystem is getting full.
+
+This is easy to do in Ansible with the when clause, 
+which contains a raw Jinja2 expression without double 
+curly braces (see group_by – Create Ansible groups 
+based on facts). It’s actually pretty simple:
+Examples
+--------
+tasks:
+  - name: "shut down Debian flavored systems"
+    command: /sbin/shutdown -t now
+    when: ansible_facts['os_family'] == "Debian"
+    
+# note that all variables can be used directly in 
+conditionals without double curly braces
+You can also use parentheses to group conditions:
+
+tasks:
+  - name: "shut down CentOS 6 and Debian 7 systems"
+    command: /sbin/shutdown -t now
+    when: (ansible_facts['distribution'] == "CentOS" 
+
+and ansible_facts['distribution_major_version'] == "6")
+ or
+  (ansible_facts['distribution'] == "Debian" and 
+ansible_facts['distribution_major_version'] == "7")

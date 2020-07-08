@@ -1,0 +1,10 @@
+                    Ansible Handler
+                ......................
+
+Handlers are just like regular tasks in an Ansible 
+playbook,but are only run if the Task contains a notify
+directive and also indicates that it changed something.
+
+A handler is a task,is called by another task only
+execute if a change is made,even if it is called 
+multiple times it only runs once.

@@ -1,0 +1,21 @@
+                    Loops
+              ----------------
+Sometimes you want to repeat a task multiple times. 
+In computer programming, this is called a loop. 
+Common Ansible loops include changing ownership on 
+several files and/or directories with the file module,
+creating multiple users with the user module, and 
+repeating a polling step until a certain result is 
+reached. Ansible offers two keywords for creating 
+loops: loop and with_<lookup>.
+
+Example
+--------
+
+with_items:
+  - 1
+  - [2,3]
+  - 4
+
+
+loop: "{{ [1, [2,3] ,4] | flatten(1) }}"

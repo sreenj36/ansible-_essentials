@@ -1,0 +1,19 @@
+                    ANSIBLE-PLAYBOOKS
+            .....................................
+Playbooks are the files where Ansible code is written. 
+Playbooks are one of the core features of Ansible and 
+tell Ansible what to execute. They are like a to-do list 
+for Ansible that contains a list of tasks. Playbooks 
+contain the steps which the user wants to execute on a 
+particular machine.Ansible-playbooks are written using 
+yaml(yet another markup language).
+
+Execute an ansible-playbook
+...........................
+
+ansible-playbook name.yaml
+
+Execute ansible-playbook as root user
+.....................................
+
+ansible-playbook -b name.yaml

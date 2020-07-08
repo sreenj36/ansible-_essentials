@@ -1,0 +1,12 @@
+---
+- hosts: gui
+  become: yes
+
+  tasks:
+    - name: install apache2
+      apt: name=apache2 state=latest  
+      when: ansible_os_family == "debian"
+
+     - name: install httpd
+       yum: name=apache2 state=latest
+       when: ansible_os_family == "RedHat"

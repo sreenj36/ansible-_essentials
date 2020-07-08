@@ -1,0 +1,16 @@
+---
+- name: install on debian
+  apt: name=apache2 state=latest update_cache=yes
+  when: ansible_os_family == "Debian"
+ 
+- name: install httpd on centos
+  yum: name=httpd state=latest update_cache=yes
+  when: ansible_os_family == "RedHat"
+
+- name: start debian service
+  service: name=apache2 enabled=yes state=started
+  when: ansible_os_family == "Debian"
+
+- name: start redhat service
+  service: name=httpd enabled=yes state=started
+  when: ansible_os_family == "RedHat"

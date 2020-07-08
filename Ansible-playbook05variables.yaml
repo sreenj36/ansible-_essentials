@@ -1,0 +1,10 @@
+#variable demonstration
+---
+- hosts: gui
+  vars: 
+   - var1: lets write some
+   - var2: lets gets some
+
+   tasks:
+    - name: echo command
+      shell: echo "{{var1}} is var1,but var2 is {{var2}}" >> /home/student/test.txt

@@ -1,0 +1,9 @@
+                   Ansible-Include
+            ---------------------------
+
+Includes a file with a list of plays or tasks to be 
+executed in the current playbook. Files with a list of 
+plays can only be included at the top level. Lists of 
+tasks can only be included where tasks normally run 
+(in play). Before Ansible 2.0, all includes were 
+'static' and were executed when the play was compiled.

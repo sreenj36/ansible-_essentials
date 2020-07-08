@@ -1,0 +1,12 @@
+--- 
+- hosts: gui
+  var: 
+   - var1= "never gonna"
+  
+   tasks:
+    - name: echo command
+      command: echo -e "{{var1}} give you up,\n {{var1}} let you down"
+      register: result
+
+     - name: show results
+       debug: msg={{result.stdout_lines}}

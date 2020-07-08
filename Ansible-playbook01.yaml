@@ -1,0 +1,10 @@
+#simple playbook to execute some shell commands
+---
+- hosts: gui
+  
+  tasks:
+   - name: uname command
+     shell: uname -a >> /home/student/result.txt   
+ 
+   - name: whoami
+     shell: whoami >> /home/student/result.txt

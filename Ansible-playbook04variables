@@ -1,0 +1,14 @@
+                 Ansible-variables
+            --------------------------
+Variable in playbooks are very similar to using 
+variables in any programming language. It helps you to 
+use and assign a value to a variable and use that 
+anywhere in the playbook. One can put conditions around
+the value of the variables and accordingly use them in 
+the playbook
+
+Example
+--------
+- hosts : <your hosts> 
+  vars:
+    - tomcat_port: 8080 

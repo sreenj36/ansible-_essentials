@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu1
+  tasks:
+    - name: install packages using loop
+      apt: name={{item}} update_cache=yes state=latest
+      with_items:
+        - vim
+        - nano
+        - apache2
